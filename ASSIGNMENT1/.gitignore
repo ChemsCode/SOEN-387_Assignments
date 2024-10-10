@@ -1,0 +1,169 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+package-lock.json
+yarn.lock
+.pnpm-lock.yaml
+
+# Logs
+logs/
+*.log
+*.log.*
+debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment Variables
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.sublime-workspace
+*.sublime-project
+*.tmproj
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+pyvenv.cfg
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.project
+*.classpath
+target/
+build/
+bin/
+
+# Ruby
+*.gem
+*.rbc
+.rvm/
+.rbenv/
+.gem/
+.bundle/
+vendor/bundle/
+
+# PHP
+vendor/
+
+# C++
+*.out
+*.exe
+*.o
+*.obj
+*.dll
+*.lib
+
+# JavaScript/TypeScript
+dist/
+lib/
+out/
+coverage/
+.eslintcache
+.tscache/
+*.tsbuildinfo
+*.js.map
+*.d.ts.map
+*.d.ts
+*.min.js
+*.map
+
+# React / Angular / Vue specific
+build/
+public/
+!src/public
+coverage/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Android/Java related
+.gradle/
+build/
+captures/
+output/
+*.keystore
+local.properties
+
+# Xcode
+*.xcworkspace
+*.xcuserdatad/
+*.lock
+build/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+DerivedData/
+*.moved-aside
+*.xcuserstate
+project.xcworkspace/
+
+# Swift
+*.xcodeproj
+*.swiftpm/
+.build/
+
+# Go
+*.exe
+*.out
+*.test
+*.mod
+*.sum
+
+# Docker
+Dockerfile
+*.dockerignore
+docker-compose.yml
+.docker/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+*.backup
+
+# Misc
+*.log
+*.lock
+*.bak
+*.swp
+*.tmp
+*.old
+*.orig
