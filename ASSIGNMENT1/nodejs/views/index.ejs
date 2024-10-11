@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Books</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Online Book Store</h1>
+    <div class="cart-icon">
+        <a href="/cart">Items in Cart</a> <img src="/images/cart-icon.png" alt="Cart">
+    </div>
+
+    <ul class="book-list">
+        <% books.forEach(book => { %>
+            <li class="book-item">
+                <span class="book-title"><%= book.title %></span><br>
+                <span class="book-price">$<%= book.price %></span><br>
+                <form action="/add-to-cart/<%= book.id %>" method="POST">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

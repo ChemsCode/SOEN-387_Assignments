@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Book</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% cart.forEach(item => { %>
+                <tr>
+                    <td><%= item.title %></td>
+                    <td>
+                        <form action="/cart/update/<%= item.id %>" method="POST">
+                            <input type="number" name="quantity" value="<%= item.quantity %>">
+                            <button type="submit">Update</button>
+                        </form>
+                    </td>
+                    <td>$<%= item.price %></td>
+                    <td>$<%= item.price * item.quantity %></td>
+                    <td>
+                        <form action="/cart/remove/<%= item.id %>" method="POST">
+                            <button type="submit">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <a href="/">Continue Shopping</a> | <a href="/checkout">Checkout</a>
+</body>
+</html>
