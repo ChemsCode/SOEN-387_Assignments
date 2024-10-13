@@ -44,3 +44,16 @@ th, td {
     padding: 8px;
     text-align: center;
 }
+
+.cart-icon a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: flex-end;
+}
+
+.cart-image {
+    width: 24px; /* Adjust the size as needed */
+    height: auto;
+    margin-left: 8px; /* Space between text and image */
+}
