@@ -15,7 +15,10 @@
 <body>
     <h1>Online Book Store</h1>
     <div class="cart-icon">
-        <a href="<%= contextPath %>/cart">Items in Cart</a>
+        <a href="<%= contextPath %>/cart">
+            Items in Cart
+            <img src="<%= contextPath %>/images/cart-icon.png" alt="Cart" class="cart-image">
+        </a>
     </div>
     <ul class="book-list">
         <% for (Book book : books) { %>
