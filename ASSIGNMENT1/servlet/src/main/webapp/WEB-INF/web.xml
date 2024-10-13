@@ -4,6 +4,11 @@
                              https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
 
+    <!-- Welcome File List -->
+    <welcome-file-list>
+        <welcome-file>browse</welcome-file> <!-- Forward to /browse -->
+    </welcome-file-list>
+
     <!-- Browse Servlet -->
     <servlet>
         <servlet-name>BrowseServlet</servlet-name>
@@ -11,7 +16,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>BrowseServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/browse</url-pattern> <!-- Map to /browse instead of / -->
     </servlet-mapping>
 
     <!-- Add to Cart Servlet -->

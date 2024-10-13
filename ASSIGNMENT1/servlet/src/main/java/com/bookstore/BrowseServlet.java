@@ -36,8 +36,9 @@ public class BrowseServlet extends HttpServlet {
 
         out.println("<h1>Online Book Store</h1>");
         out.println("<div class='cart-icon'>");
-        out.println("<a href='" + contextPath + "/cart'>Items in Cart</a>");
-        out.println("</div>");
+        out.println("<a href='" + contextPath + "/cart'>Items in Cart");
+        out.println("<img src='" + contextPath + "/images/cart-icon.png' alt='Cart' class='cart-image'>");
+        out.println("</a></div>");
 
         out.println("<ul class='book-list'>");
 
