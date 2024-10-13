@@ -14,6 +14,7 @@ import java.util.List;
 @WebServlet("/cart")
 public class CartServlet extends HttpServlet {
 
+    @SuppressWarnings("unchecked")
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
 
@@ -41,6 +42,7 @@ public class CartServlet extends HttpServlet {
         response.sendRedirect("/cart");
     }
 
+    @SuppressWarnings("unchecked")
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
