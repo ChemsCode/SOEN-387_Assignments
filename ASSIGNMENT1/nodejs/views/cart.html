@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Book</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- Cart items will be loaded here -->
+        </tbody>
+    </table>
+    <a href="/">Continue Shopping</a> | <a href="/checkout">Checkout</a>
+
+    <script>
+        fetch('/cart-data')
+            .then(response => response.json())
+            .then(cart => {
+                const cartItems = document.getElementById('cart-items');
+                if (cart.length > 0) {
+                    cart.forEach(item => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${item.title}</td>
+                            <td>
+                                <form action="/cart/update/${item.id}" method="POST">
+                                    <input type="number" name="quantity" value="${item.quantity}" min="1">
+                                    <button type="submit">Update</button>
+                                </form>
+                            </td>
+                            <td>$${item.price}</td>
+                            <td>$${item.price * item.quantity}</td>
+                            <td>
+                                <form action="/cart/remove/${item.id}" method="POST">
+                                    <button type="submit">Remove</button>
+                                </form>
+                            </td>
+                        `;
+                        cartItems.appendChild(tr);
+                    });
+                } else {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = '<td colspan="5">Your cart is empty.</td>';
+                    cartItems.appendChild(tr);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>

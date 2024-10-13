@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Books</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <h1>Online Book Store</h1>
+    <div class="cart-icon">
+        <a href="/cart">Items in Cart</a>
+    </div>
+    <ul class="book-list" id="book-list">
+        <!-- Books will be loaded here -->
+    </ul>
+
+    <script>
+        fetch('/books')
+            .then(response => response.json())
+            .then(books => {
+                const bookList = document.getElementById('book-list');
+                books.forEach(book => {
+                    const li = document.createElement('li');
+                    li.className = 'book-item';
+                    li.innerHTML = `
+                        <span class="book-title">${book.title}</span><br>
+                        <span class="book-price">$${book.price}</span><br>
+                        <form action="/add-to-cart/${book.id}" method="POST">
+                            <button type="submit">Add to Cart</button>
+                        </form>
+                    `;
+                    bookList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
