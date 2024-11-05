@@ -27,7 +27,7 @@
     </dependencies>
 
     <build>
-        <finalName>bookstore</finalName>
+        <finalName>bookstore2</finalName>
         <plugins>
             <!-- Maven Compiler Plugin -->
             <plugin>
