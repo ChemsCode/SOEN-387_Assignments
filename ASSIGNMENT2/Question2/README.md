@@ -4,7 +4,7 @@ This application demonstrates a factory pattern that creates console loggers in 
 
 ## Setup Instructions
 
-1. Navigate to the `FirstWebApp` directory.
+1. Navigate to the directory.
 ```
    cd Question2
 ```
