@@ -5,15 +5,19 @@
 </head>
 <body>
     <h1><%= helper.getName() %></h1>
+
+    <h2>Info:</h2>
     <p><%= helper.getInfo() %></p>
+
     <h2>Albums:</h2>
     <ul>
-      <% helper.getAlbums().forEach(function(album) { %>
-        <li>
-            <a href="/album?title=<%= encodeURIComponent(album) %>"><%= album %></a>
-        </li>
-      <% }); %>
+        <% helper.getAlbums().forEach(function(album) { %>
+            <li>
+                <a href="/album?title=<%= encodeURIComponent(album) %>"><%= album %></a>
+            </li>
+        <% }); %>
     </ul>
-    <p><a href="/">Back to Artist List</a></p>
+
+    <p><a href="/">Back to Home</a></p>
 </body>
 </html>

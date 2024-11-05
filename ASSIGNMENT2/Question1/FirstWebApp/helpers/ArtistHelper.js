@@ -8,7 +8,7 @@ class ArtistHelper {
     }
 
     getInfo() {
-        return "Here to get comments on the artist";
+        return this.artist.getInfo();
     }
 
     getAlbums() {
