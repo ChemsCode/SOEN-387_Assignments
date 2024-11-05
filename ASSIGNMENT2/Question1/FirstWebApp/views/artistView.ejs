@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artist View - <%= helper.getName() %></title>
+</head>
+<body>
+    <h1><%= helper.getName() %></h1>
+    <p><%= helper.getInfo() %></p>
+    <h2>Albums:</h2>
+    <ul>
+      <% helper.getAlbums().forEach(function(album) { %>
+        <li>
+            <a href="/album?title=<%= encodeURIComponent(album) %>"><%= album %></a>
+        </li>
+      <% }); %>
+    </ul>
+    <p><a href="/">Back to Artist List</a></p>
+</body>
+</html>
