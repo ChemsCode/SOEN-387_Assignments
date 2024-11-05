@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Album View - <%= helper.getTitle() %></title>
+</head>
+<body>
+    <h1><%= helper.getTitle() %></h1>
+    <p>Artist: <a href="/?command=Artist&name=<%= encodeURIComponent(helper.getArtist()) %>"><%= helper.getArtist() %></a></p>
+    <p>Year: <%= helper.getYear() %></p>
+    <h2>Info:</h2>
+    <p><%= helper.getInfo() %></p>
+    <p><a href="/?command=Home">Back to Home</a></p>
+</body>
+</html>
